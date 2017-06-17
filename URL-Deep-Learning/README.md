@@ -4,7 +4,7 @@ Melissa K (Jun 2017)
 
 ### Code
 
-Go right away to the notebook that contains the code: [Featureless Deep Learning URL notebook](Featureless-Deep-Learning-URL.ipynb)
+Go right away to the notebook that contains the code: [Featureless Deep Learning URL notebook](FeaturelessDeepLearningURL.ipynb)
 
 ### Table of content
 
@@ -217,7 +217,7 @@ iteration. Again for a multi-class problem the loss function would need to be ch
     model.compile(optimizer=adam, loss='binary_crossentropy', metrics=['accuracy'])
 ```
 
-See [Featureless Deep Learning URL notebook](Featureless-Deep-Learning-URL.ipynb):
+See [Featureless Deep Learning URL notebook](FeaturelessDeepLearningURL.ipynb):
 
 1. Simple LSTM
 
