@@ -1,6 +1,6 @@
 # Featureless Deep Learning for Detection of Malicious URLs
 
-Melissa K (Jun 2017)
+Melissa K (Dec 2017)
 
 ### Code
 
@@ -219,12 +219,11 @@ iteration. Again for a multi-class problem the loss function would need to be ch
     model.compile(optimizer=adam, loss='binary_crossentropy', metrics=['accuracy'])
 ```
 
-See [Featureless Deep Learning URL notebook](FeaturelessDeepLearningURL.ipynb):
+See [Featureless Deep Learning Malicious URL Detection notebook](FeaturelessDeepLearningMaliciousURLClassification.ipynb):
 
 1. **Simple LSTM**
 
 ```python
-
 def simple_lstm(max_len=75, emb_dim=32, max_vocab_len=100, lstm_output_size=32, W_reg=regularizers.l2(1e-4)):
     # Input
     main_input = Input(shape=(max_len,), dtype='int32', name='main_input')
@@ -250,7 +249,6 @@ def simple_lstm(max_len=75, emb_dim=32, max_vocab_len=100, lstm_output_size=32, 
 2. **1D Convolution and LSTM**
 
 ```python
-
 def lstm_conv(max_len=75, emb_dim=32, max_vocab_len=100, lstm_output_size=32, W_reg=regularizers.l2(1e-4)):
     # Input
     main_input = Input(shape=(max_len,), dtype='int32', name='main_input')
@@ -260,12 +258,11 @@ def lstm_conv(max_len=75, emb_dim=32, max_vocab_len=100, lstm_output_size=32, W_
     emb = Dropout(0.25)(emb)
 
     # Conv layer
-    conv = Convolution1D(filter_length=5, nb_filter=256, \
+    conv = Convolution1D(kernel_size=5, filters=256, \
                      border_mode='same')(emb)
     conv = ELU()(conv)
 
-    conv = MaxPooling1D(pool_length=4)(conv)
-    #conv = BatchNormalization(mode=0)(conv)
+    conv = MaxPooling1D(pool_size=4)(conv)
     conv = Dropout(0.5)(conv)
 
     # LSTM layer
@@ -286,7 +283,6 @@ def lstm_conv(max_len=75, emb_dim=32, max_vocab_len=100, lstm_output_size=32, W_
 3. **1D Convolutions and Fully Connected Layers**
 
 ```python
-
 def conv_fully(max_len=75, emb_dim=32, max_vocab_len=100, W_reg=regularizers.l2(1e-4)):
     # Input
     main_input = Input(shape=(max_len,), dtype='int32', name='main_input')
@@ -299,13 +295,13 @@ def conv_fully(max_len=75, emb_dim=32, max_vocab_len=100, W_reg=regularizers.l2(
     def sum_1d(X):
         return K.sum(X, axis=1)
     
-    def get_conv_layer(emb, filter_length=5, nb_filter=256):
+    def get_conv_layer(emb, kernel_size=5, filters=256):
         # Conv layer
-        conv = Convolution1D(filter_length=filter_length, nb_filter=nb_filter, \
+        conv = Convolution1D(kernel_size=kernel_size, filters=filters, \
                      border_mode='same')(emb)
         conv = ELU()(conv)
 
-        conv = Lambda(sum_1d, output_shape=(nb_filter,))(conv)
+        conv = Lambda(sum_1d, output_shape=(filters,))(conv)
         #conv = BatchNormalization(mode=0)(conv)
         conv = Dropout(0.5)(conv)
         return conv
@@ -313,13 +309,13 @@ def conv_fully(max_len=75, emb_dim=32, max_vocab_len=100, W_reg=regularizers.l2(
     # Multiple Conv Layers
     
     # calling custom conv function from above
-    conv1 = get_conv_layer(emb, filter_length=2, nb_filter=256)
-    conv2 = get_conv_layer(emb, filter_length=3, nb_filter=256)
-    conv3 = get_conv_layer(emb, filter_length=4, nb_filter=256)
-    conv4 = get_conv_layer(emb, filter_length=5, nb_filter=256)
+    conv1 = get_conv_layer(emb, kernel_size=2, filters=256)
+    conv2 = get_conv_layer(emb, kernel_size=3, filters=256)
+    conv3 = get_conv_layer(emb, kernel_size=4, filters=256)
+    conv4 = get_conv_layer(emb, kernel_size=5, filters=256)
 
     # Fully Connected Layers
-    merged = merge([conv1,conv2,conv3,conv4],mode="concat")
+    merged = concatenate([conv1,conv2,conv3,conv4], axis=1)
 
     hidden1 = Dense(1024)(merged)
     hidden1 = ELU()(hidden1)
@@ -339,6 +335,7 @@ def conv_fully(max_len=75, emb_dim=32, max_vocab_len=100, W_reg=regularizers.l2(
     adam = Adam(lr=1e-4, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=0.0)
     model.compile(optimizer=adam, loss='binary_crossentropy', metrics=['accuracy'])
     return model
+
 
 ```
 
@@ -364,7 +361,7 @@ batch_size = 32
 
 model = <your architecture>
 
-model.fit(X_train, target_train, nb_epoch=nb_epoch, batch_size=batch_size)
+model.fit(X_train, target_train, epochs=epochs, batch_size=batch_size)
 loss, accuracy = model.evaluate(X_test, target_test, verbose=1)
 ```
 

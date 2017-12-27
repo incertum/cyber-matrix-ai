@@ -120,7 +120,7 @@ $(document).ready(function () {
 
 <div id="featureless-deep-learning-for-detection-of-malicious-urls" class="section level1">
 <h1>Featureless Deep Learning for Detection of Malicious URLs</h1>
-<p>Melissa K (Jun 2017)</p>
+<p>Melissa K (Dec 2017)</p>
 <div id="code" class="section level3">
 <h3>Code</h3>
 <p>Go right away to the notebook that contains the code: <a href="FeaturelessDeepLearningMaliciousURLClassification.ipynb">Featureless Deep Learning Malicious URL Detection notebook</a></p>
@@ -234,12 +234,11 @@ output = Dense(1, activation='sigmoid', name='output')(&lt;penultimate_layer&gt;
     model = Model(input=[main_input], output=[output])
     dam = Adam(lr=1e-4, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=0.0)
     model.compile(optimizer=adam, loss='binary_crossentropy', metrics=['accuracy'])</code></pre>
-<p>See <a href="FeaturelessDeepLearningURL.ipynb">Featureless Deep Learning URL notebook</a>:</p>
+<p>See <a href="FeaturelessDeepLearningMaliciousURLClassification.ipynb">Featureless Deep Learning Malicious URL Detection notebook</a>:</p>
 <ol style="list-style-type: decimal">
 <li><strong>Simple LSTM</strong></li>
 </ol>
-<pre class="python"><code>
-def simple_lstm(max_len=75, emb_dim=32, max_vocab_len=100, lstm_output_size=32, W_reg=regularizers.l2(1e-4)):
+<pre class="python"><code>def simple_lstm(max_len=75, emb_dim=32, max_vocab_len=100, lstm_output_size=32, W_reg=regularizers.l2(1e-4)):
     # Input
     main_input = Input(shape=(max_len,), dtype='int32', name='main_input')
     # Embedding layer
@@ -262,8 +261,7 @@ def simple_lstm(max_len=75, emb_dim=32, max_vocab_len=100, lstm_output_size=32, 
 <ol start="2" style="list-style-type: decimal">
 <li><strong>1D Convolution and LSTM</strong></li>
 </ol>
-<pre class="python"><code>
-def lstm_conv(max_len=75, emb_dim=32, max_vocab_len=100, lstm_output_size=32, W_reg=regularizers.l2(1e-4)):
+<pre class="python"><code>def lstm_conv(max_len=75, emb_dim=32, max_vocab_len=100, lstm_output_size=32, W_reg=regularizers.l2(1e-4)):
     # Input
     main_input = Input(shape=(max_len,), dtype='int32', name='main_input')
     # Embedding layer
@@ -272,12 +270,11 @@ def lstm_conv(max_len=75, emb_dim=32, max_vocab_len=100, lstm_output_size=32, W_
     emb = Dropout(0.25)(emb)
 
     # Conv layer
-    conv = Convolution1D(filter_length=5, nb_filter=256, \
+    conv = Convolution1D(kernel_size=5, filters=256, \
                      border_mode='same')(emb)
     conv = ELU()(conv)
 
-    conv = MaxPooling1D(pool_length=4)(conv)
-    #conv = BatchNormalization(mode=0)(conv)
+    conv = MaxPooling1D(pool_size=4)(conv)
     conv = Dropout(0.5)(conv)
 
     # LSTM layer
@@ -296,8 +293,7 @@ def lstm_conv(max_len=75, emb_dim=32, max_vocab_len=100, lstm_output_size=32, W_
 <ol start="3" style="list-style-type: decimal">
 <li><strong>1D Convolutions and Fully Connected Layers</strong></li>
 </ol>
-<pre class="python"><code>
-def conv_fully(max_len=75, emb_dim=32, max_vocab_len=100, W_reg=regularizers.l2(1e-4)):
+<pre class="python"><code>def conv_fully(max_len=75, emb_dim=32, max_vocab_len=100, W_reg=regularizers.l2(1e-4)):
     # Input
     main_input = Input(shape=(max_len,), dtype='int32', name='main_input')
     # Embedding layer
@@ -309,13 +305,13 @@ def conv_fully(max_len=75, emb_dim=32, max_vocab_len=100, W_reg=regularizers.l2(
     def sum_1d(X):
         return K.sum(X, axis=1)
     
-    def get_conv_layer(emb, filter_length=5, nb_filter=256):
+    def get_conv_layer(emb, kernel_size=5, filters=256):
         # Conv layer
-        conv = Convolution1D(filter_length=filter_length, nb_filter=nb_filter, \
+        conv = Convolution1D(kernel_size=kernel_size, filters=filters, \
                      border_mode='same')(emb)
         conv = ELU()(conv)
 
-        conv = Lambda(sum_1d, output_shape=(nb_filter,))(conv)
+        conv = Lambda(sum_1d, output_shape=(filters,))(conv)
         #conv = BatchNormalization(mode=0)(conv)
         conv = Dropout(0.5)(conv)
         return conv
@@ -323,13 +319,13 @@ def conv_fully(max_len=75, emb_dim=32, max_vocab_len=100, W_reg=regularizers.l2(
     # Multiple Conv Layers
     
     # calling custom conv function from above
-    conv1 = get_conv_layer(emb, filter_length=2, nb_filter=256)
-    conv2 = get_conv_layer(emb, filter_length=3, nb_filter=256)
-    conv3 = get_conv_layer(emb, filter_length=4, nb_filter=256)
-    conv4 = get_conv_layer(emb, filter_length=5, nb_filter=256)
+    conv1 = get_conv_layer(emb, kernel_size=2, filters=256)
+    conv2 = get_conv_layer(emb, kernel_size=3, filters=256)
+    conv3 = get_conv_layer(emb, kernel_size=4, filters=256)
+    conv4 = get_conv_layer(emb, kernel_size=5, filters=256)
 
     # Fully Connected Layers
-    merged = merge([conv1,conv2,conv3,conv4],mode=&quot;concat&quot;)
+    merged = concatenate([conv1,conv2,conv3,conv4], axis=1)
 
     hidden1 = Dense(1024)(merged)
     hidden1 = ELU()(hidden1)
@@ -349,6 +345,7 @@ def conv_fully(max_len=75, emb_dim=32, max_vocab_len=100, W_reg=regularizers.l2(
     adam = Adam(lr=1e-4, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=0.0)
     model.compile(optimizer=adam, loss='binary_crossentropy', metrics=['accuracy'])
     return model
+
 </code></pre>
 </div>
 <div id="training-and-evaluation" class="section level2">
@@ -362,7 +359,7 @@ batch_size = 32
 
 model = &lt;your architecture&gt;
 
-model.fit(X_train, target_train, nb_epoch=nb_epoch, batch_size=batch_size)
+model.fit(X_train, target_train, epochs=epochs, batch_size=batch_size)
 loss, accuracy = model.evaluate(X_test, target_test, verbose=1)</code></pre>
 <p>If you wanted to print out the layers, you can achieve this with the following function</p>
 <pre class="python"><code>def print_layers_dims(model):
