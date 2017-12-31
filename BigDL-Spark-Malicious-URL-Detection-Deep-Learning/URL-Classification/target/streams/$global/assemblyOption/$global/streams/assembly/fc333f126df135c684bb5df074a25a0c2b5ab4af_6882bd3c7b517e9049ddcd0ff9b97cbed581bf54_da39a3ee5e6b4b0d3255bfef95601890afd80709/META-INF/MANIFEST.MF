@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Vendor: org.spire-math
+Implementation-Title: spire
+Implementation-Version: 0.7.4
+Implementation-Vendor-Id: org.spire-math
+Specification-Vendor: org.spire-math
+Specification-Title: spire
+Implementation-URL: http://spire-math.org
+Specification-Version: 0.7.4
+

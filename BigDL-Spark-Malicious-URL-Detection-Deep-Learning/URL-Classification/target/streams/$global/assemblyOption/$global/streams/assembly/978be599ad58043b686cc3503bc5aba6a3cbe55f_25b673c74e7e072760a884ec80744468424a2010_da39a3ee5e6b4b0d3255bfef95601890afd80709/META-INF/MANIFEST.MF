@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Vendor: com.typesafe.play
+Implementation-Title: Play-Iteratees
+Implementation-Version: 2.3.8
+Implementation-Vendor-Id: com.typesafe.play
+Specification-Vendor: com.typesafe.play
+Specification-Title: Play-Iteratees
+Implementation-URL: https://playframework.com
+Specification-Version: 2.3.8
+

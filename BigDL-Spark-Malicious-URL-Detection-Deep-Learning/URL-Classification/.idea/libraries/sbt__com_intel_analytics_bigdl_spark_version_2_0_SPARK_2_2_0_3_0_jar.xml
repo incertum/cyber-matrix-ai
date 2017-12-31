@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: com.intel.analytics.bigdl.spark-version:2.0-SPARK_2.2:0.3.0:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/com.intel.analytics.bigdl.spark-version/2.0-SPARK_2.2/jars/2.0-SPARK_2.2-0.3.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/com.intel.analytics.bigdl.spark-version/2.0-SPARK_2.2/srcs/2.0-SPARK_2.2-0.3.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

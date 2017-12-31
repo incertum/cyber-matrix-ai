@@ -1,0 +1,32 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1393637889532
+Build-Jdk: 1.7.0_25
+Built-By: tatu
+Bundle-Description: Core Jackson abstractions, basic JSON streaming API 
+ implementation
+Bundle-DocURL: http://wiki.fasterxml.com/JacksonHome
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt, http://w
+ ww.gnu.org/licenses/lgpl-2.1.html
+Bundle-ManifestVersion: 2
+Bundle-Name: Jackson-core
+Bundle-SymbolicName: com.fasterxml.jackson.core.jackson-core
+Bundle-Vendor: FasterXML
+Bundle-Version: 2.3.2
+Created-By: Apache Maven Bundle Plugin
+Export-Package: com.fasterxml.jackson.core;version="2.3.2",com.fasterxml
+ .jackson.core.io;version="2.3.2",com.fasterxml.jackson.core.json;versio
+ n="2.3.2",com.fasterxml.jackson.core.util;version="2.3.2",com.fasterxml
+ .jackson.core.base;version="2.3.2",com.fasterxml.jackson.core.sym;versi
+ on="2.3.2",com.fasterxml.jackson.core.type;version="2.3.2",com.fasterxm
+ l.jackson.core.format;version="2.3.2"
+Implementation-Build-Date: 2014-02-28 17:38:00-0800
+Implementation-Title: Jackson-core
+Implementation-Vendor: FasterXML
+Implementation-Vendor-Id: com.fasterxml.jackson.core
+Implementation-Version: 2.3.2
+Specification-Title: Jackson-core
+Specification-Vendor: FasterXML
+Specification-Version: 2.3.2
+Tool: Bnd-1.50.0
+X-Compile-Source-JDK: 1.6
+X-Compile-Target-JDK: 1.6

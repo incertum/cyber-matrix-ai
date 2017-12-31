@@ -1,0 +1,50 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1393729950692
+Build-Jdk: 1.7.0_25
+Built-By: tatu
+Bundle-Description: General data-binding functionality for Jackson: work
+ s on core streaming API
+Bundle-DocURL: http://wiki.fasterxml.com/JacksonHome
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt, http://w
+ ww.gnu.org/licenses/lgpl-2.1.html
+Bundle-ManifestVersion: 2
+Bundle-Name: jackson-databind
+Bundle-SymbolicName: com.fasterxml.jackson.core.jackson-databind
+Bundle-Vendor: FasterXML
+Bundle-Version: 2.3.2
+Created-By: Apache Maven Bundle Plugin
+Export-Package: com.fasterxml.jackson.databind;version="2.3.2",com.faste
+ rxml.jackson.databind.annotation;version="2.3.2",com.fasterxml.jackson.
+ databind.cfg;version="2.3.2",com.fasterxml.jackson.databind.deser;versi
+ on="2.3.2",com.fasterxml.jackson.databind.deser.impl;version="2.3.2",co
+ m.fasterxml.jackson.databind.deser.std;version="2.3.2",com.fasterxml.ja
+ ckson.databind.exc;version="2.3.2",com.fasterxml.jackson.databind.ext;v
+ ersion="2.3.2",com.fasterxml.jackson.databind.introspect;version="2.3.2
+ ",com.fasterxml.jackson.databind.jsonschema;version="2.3.2",com.fasterx
+ ml.jackson.databind.jsonFormatVisitors;version="2.3.2",com.fasterxml.ja
+ ckson.databind.jsontype;version="2.3.2",com.fasterxml.jackson.databind.
+ jsontype.impl;version="2.3.2",com.fasterxml.jackson.databind.module;ver
+ sion="2.3.2",com.fasterxml.jackson.databind.node;version="2.3.2",com.fa
+ sterxml.jackson.databind.ser;version="2.3.2",com.fasterxml.jackson.data
+ bind.ser.impl;version="2.3.2",com.fasterxml.jackson.databind.ser.std;ve
+ rsion="2.3.2",com.fasterxml.jackson.databind.type;version="2.3.2",com.f
+ asterxml.jackson.databind.util;version="2.3.2"
+Implementation-Build-Date: 2014-03-01 19:12:22-0800
+Implementation-Title: jackson-databind
+Implementation-Vendor: FasterXML
+Implementation-Vendor-Id: com.fasterxml.jackson.core
+Implementation-Version: 2.3.2
+Import-Package: com.fasterxml.jackson.annotation;version="[2.3.0,2.4)",c
+ om.fasterxml.jackson.core;version="[2.3.2,2.4)",com.fasterxml.jackson.c
+ ore.base;version="[2.3.2,2.4)",com.fasterxml.jackson.core.format;versio
+ n="[2.3.2,2.4)",com.fasterxml.jackson.core.io;version="[2.3.2,2.4)",com
+ .fasterxml.jackson.core.json;version="[2.3.2,2.4)",com.fasterxml.jackso
+ n.core.type;version="[2.3.2,2.4)",com.fasterxml.jackson.core.util;versi
+ on="[2.3.2,2.4)",javax.xml.datatype,javax.xml.namespace,javax.xml.parse
+ rs,org.w3c.dom,org.w3c.dom.bootstrap,org.w3c.dom.ls,org.xml.sax
+Specification-Title: jackson-databind
+Specification-Vendor: FasterXML
+Specification-Version: 2.3.2
+Tool: Bnd-1.50.0
+X-Compile-Source-JDK: 1.6
+X-Compile-Target-JDK: 1.6

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one
+   or more contributor license agreements.  See the NOTICE file
+   distributed with this work for additional information
+   regarding copyright ownership.  The ASF licenses this file
+   to you under the Apache License, Version 2.0 (the
+   "License"); you may not use this file except in compliance
+   with the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing,
+   software distributed under the License is distributed on an
+   "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+   KIND, either express or implied.  See the License for the
+   specific language governing permissions and limitations
+   under the License.    
+-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+	
+  <parent>
+    <groupId>org.apache.opennlp</groupId>
+    <artifactId>opennlp</artifactId>
+    <version>1.6.0</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+    
+  <artifactId>opennlp-tools</artifactId>
+  <packaging>bundle</packaging>
+  <name>Apache OpenNLP Tools</name>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.core</artifactId>
+      <version>4.2.0</version>
+      <scope>provided</scope>
+      <optional>true</optional>
+    </dependency>
+        
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.compendium</artifactId>
+      <version>4.2.0</version>
+      <scope>provided</scope>
+      <optional>true</optional>
+    </dependency>
+        
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.4</version>
+      <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <argLine>-Xmx1024m</argLine>
+          <excludes>
+            <exclude>/opennlp/tools/eval/**/*</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+			
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>2.3.1</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <mainClass>opennlp.tools.cmdline.CLI</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+            
+      <plugin>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>create-javadoc-jar</id>
+            <configuration>
+              <excludePackageNames>opennlp.tools.cmdline</excludePackageNames>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+			
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+          <instructions>
+            <Bundle-Activator>opennlp.tools.util.ext.OSGiExtensionLoader</Bundle-Activator>
+            <Bundle-RequiredExecutionEnvironment>JavaSE-1.7</Bundle-RequiredExecutionEnvironment>
+            <Export-Package>
+              !opennlp.tools.cmdline.*,
+              opennlp.tools.*
+            </Export-Package>
+            <Import-Package>*</Import-Package>
+          </instructions>
+        </configuration>
+      </plugin>
+			
+      <plugin>
+        <groupId>org.apache.rat</groupId>
+        <artifactId>apache-rat-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>default-cli</id>
+            <configuration>
+              <excludes>
+                <!-- test data -->
+                <exclude>src/test/resources/opennlp/tools/chunker/*.txt</exclude>
+                <exclude>src/test/resources/opennlp/tools/formats/*.sample</exclude>
+                <exclude>src/test/resources/opennlp/tools/namefind/*.txt</exclude>
+                <exclude>src/test/resources/opennlp/tools/namefind/*.train</exclude>
+                <exclude>src/test/resources/opennlp/tools/parser/en_head_rules</exclude>
+                <exclude>src/test/resources/opennlp/tools/parser/en_head_rules</exclude>
+                <exclude>src/test/resources/opennlp/tools/parser/parser.train</exclude>
+                <exclude>src/test/resources/opennlp/tools/parser/test.parse</exclude>
+                <exclude>src/test/resources/opennlp/tools/postag/AnnotatedSentences.txt</exclude>
+                <exclude>src/test/resources/opennlp/tools/sentdetect/Sentences.txt</exclude>
+                <exclude>src/test/resources/opennlp/tools/tokenize/token.train</exclude>
+                <exclude>src/main/java/opennlp/tools/ml/maxent/AllEnglishAffixes.txt</exclude>
+                <exclude>src/test/resources/data/opennlp/maxent/io/rvfes-bug-data-broken.txt</exclude>
+                <exclude>src/test/resources/data/opennlp/maxent/io/rvfes-bug-data-ok.txt</exclude>
+                <exclude>src/test/resources/data/opennlp/maxent/real-valued-weights-training-data.txt</exclude>
+                <exclude>src/test/resources/data/opennlp/maxent/repeat-weighting-training-data.txt</exclude>
+                <exclude>src/test/resources/data/ppa/bitstrings</exclude>
+                <exclude>src/test/resources/data/ppa/devset</exclude>
+                <exclude>src/test/resources/data/ppa/test</exclude>
+                <exclude>src/test/resources/data/ppa/training</exclude>
+                <exclude>src/test/resources/opennlp/tools/doccat/DoccatSample.txt</exclude>
+                <exclude>src/test/resources/opennlp/tools/formats/brat/voa-with-entities.ann</exclude>
+                <exclude>src/test/resources/opennlp/tools/formats/brat/voa-with-entities.txt</exclude>
+                <exclude>src/test/resources/opennlp/tools/formats/brat/voa-with-relations.ann</exclude>
+                <exclude>src/test/resources/opennlp/tools/formats/brat/voa-with-relations.txt</exclude>
+                
+                <!-- head rule files, format does not allow AL header -->
+                <exclude>lang/en/parser/en-head_rules</exclude>
+                <exclude>lang/es/parser/es-head-rules</exclude>
+
+                <!-- other licence -->
+		            <exclude>src/main/java/opennlp/tools/stemmer/snowball/*.java</exclude>
+              </excludes>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

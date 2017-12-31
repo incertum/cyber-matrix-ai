@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Vendor: TwelveMonkeys
+Implementation-Title: twelvemonkeys-imageio-jpeg
+Implementation-Version: 3.2.1
+Built-By: harald.kuhr
+Build-Jdk: 1.7.0_71
+Created-By: Apache Maven 3.3.3
+Implementation-URL: https://github.com/haraldk/TwelveMonkeys/imageio/i
+ mageio-jpeg
+Archiver-Version: Plexus Archiver
+

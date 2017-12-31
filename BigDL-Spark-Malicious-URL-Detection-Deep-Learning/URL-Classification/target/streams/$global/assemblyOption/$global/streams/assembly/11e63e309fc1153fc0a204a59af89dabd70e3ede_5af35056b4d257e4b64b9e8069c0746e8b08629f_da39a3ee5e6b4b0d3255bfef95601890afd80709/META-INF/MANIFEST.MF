@@ -1,0 +1,56 @@
+Manifest-Version: 1.0
+Export-Package: org.apache.log4j.net;uses:="org.apache.log4j,org.apach
+ e.log4j.spi,javax.naming,org.apache.log4j.helpers,javax.jms,org.apach
+ e.log4j.xml,javax.mail,javax.mail.internet,org.w3c.dom,javax.jmdns";v
+ ersion="1.2.17",org.apache.log4j.jmx;uses:="org.apache.log4j,javax.ma
+ nagement,org.apache.log4j.helpers,org.apache.log4j.spi";version="1.2.
+ 17",org.apache.log4j.jdbc;uses:="org.apache.log4j,org.apache.log4j.sp
+ i";version="1.2.17",org.apache.log4j.config;uses:="org.apache.log4j.h
+ elpers,org.apache.log4j,org.apache.log4j.spi";version="1.2.17",org.ap
+ ache.log4j.helpers;uses:="org.apache.log4j,org.apache.log4j.spi,org.a
+ pache.log4j.pattern";version="1.2.17",org.apache.log4j;uses:="org.apa
+ che.log4j.spi,org.apache.log4j.helpers,org.apache.log4j.pattern,org.a
+ pache.log4j.or,org.apache.log4j.config";version="1.2.17",org.apache.l
+ og4j.or.jms;uses:="org.apache.log4j.helpers,javax.jms,org.apache.log4
+ j.or";version="1.2.17",org.apache.log4j.nt;uses:="org.apache.log4j.he
+ lpers,org.apache.log4j,org.apache.log4j.spi";version="1.2.17",org.apa
+ che.log4j.or.sax;uses:="org.apache.log4j.or,org.xml.sax";version="1.2
+ .17",org.apache.log4j.pattern;uses:="org.apache.log4j.helpers,org.apa
+ che.log4j.spi,org.apache.log4j,org.apache.log4j.or";version="1.2.17",
+ org.apache.log4j.spi;uses:="org.apache.log4j,org.apache.log4j.helpers
+ ,org.apache.log4j.or";version="1.2.17",org.apache.log4j.rewrite;uses:
+ ="org.apache.log4j,org.apache.log4j.spi,org.apache.log4j.helpers,org.
+ apache.log4j.xml,org.w3c.dom";version="1.2.17",org.apache.log4j.or;us
+ es:="org.apache.log4j.helpers,org.apache.log4j.spi,org.apache.log4j";
+ version="1.2.17",org.apache.log4j.xml;uses:="javax.xml.parsers,org.w3
+ c.dom,org.xml.sax,org.apache.log4j.config,org.apache.log4j.helpers,or
+ g.apache.log4j,org.apache.log4j.spi,org.apache.log4j.or";version="1.2
+ .17",org.apache.log4j.varia;uses:="org.apache.log4j.spi,org.apache.lo
+ g4j,org.apache.log4j.helpers";version="1.2.17"
+Ignore-Package: com.sun.jdmk.comm,javax.swing.text,javax.swing.border,
+ javax.swing.tree,javax.swing,com.ibm.uvm.tools,javax.swing.table,java
+ x.swing.event
+Built-By: cy
+Tool: Bnd-0.0.357
+Bundle-Name: Apache Log4j
+Created-By: Apache Maven Bundle Plugin
+Bundle-Vendor: Apache Software Foundation
+Build-Jdk: 1.6.0_23
+Bundle-Version: 1.2.17
+Bnd-LastModified: 1336303489100
+Bundle-ManifestVersion: 2
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-Description: Apache Log4j 1.2
+Bundle-DocURL: http://logging.apache.org/log4j/1.2
+Bundle-SymbolicName: log4j
+Import-Package: javax.jmdns;resolution:=optional,javax.jms;resolution:
+ =optional,javax.mail;resolution:=optional,javax.mail.internet;resolut
+ ion:=optional,javax.management,javax.naming,javax.xml.parsers,org.w3c
+ .dom,org.xml.sax,org.xml.sax.helpers
+
+Name: org.apache.log4j
+DynamicImport-Package: *
+Implementation-Vendor: "Apache Software Foundation"
+Implementation-Title: log4j
+Implementation-Version: 1.2.17
+

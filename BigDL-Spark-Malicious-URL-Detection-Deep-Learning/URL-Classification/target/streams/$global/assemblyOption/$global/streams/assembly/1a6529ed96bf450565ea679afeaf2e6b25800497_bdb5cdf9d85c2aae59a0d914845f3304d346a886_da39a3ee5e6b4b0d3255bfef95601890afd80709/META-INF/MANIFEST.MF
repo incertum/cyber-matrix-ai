@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Export-Package: org.joda.convert;version="1.6.0",org.joda.convert.fact
+ ory;uses:="org.joda.convert";version="1.6.0"
+Implementation-Title: Joda-Convert
+Implementation-Version: 1.6
+Specification-Vendor: Joda.org
+Built-By: stephen
+Tool: Bnd-2.1.0.20130426-122213
+Bundle-Name: Joda-Convert
+Created-By: Apache Maven Bundle Plugin
+Bundle-Vendor: Joda.org
+Implementation-Vendor: Joda.org
+Implementation-Vendor-Id: org.joda
+Bundle-Version: 1.6.0
+Build-Jdk: 1.7.0_45
+Bnd-LastModified: 1390847852956
+Bundle-ManifestVersion: 2
+Specification-Title: Joda-Convert
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-Description: Library to convert Objects to and from String
+Bundle-SymbolicName: org.joda.convert
+Bundle-DocURL: http://www.joda.org
+Import-Package: javax.xml.bind
+Specification-Version: 1.6
+Archiver-Version: Plexus Archiver
+

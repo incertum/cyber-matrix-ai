@@ -1,0 +1,5 @@
+[0m[[0m[33mwarn[0m] [0m[0m/home/m/Spark-Scala/BigDL-Spark-Malicious-URL-Detection-Deep-Learning/URL-Classification/src/main/scala/incertum/cybermatrixai/url/Driver.scala:4:35: imported `DeepLearning' is permanently hidden by definition of class DeepLearning in package url[0m
+[0m[[0m[33mwarn[0m] [0m[0mimport incertum.cybermatrixai.url.DeepLearning[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                  ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mthere was one deprecation warning; re-run with -deprecation for details[0m
+[0m[[0m[33mwarn[0m] [0m[0mtwo warnings found[0m

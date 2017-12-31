@@ -1,0 +1,106 @@
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: jackson-core-2.3.2.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: play-functional_2.11-2.3.8.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: play-datacommons_2.11-2.3.8.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: 2.0-SPARK_2.2-0.3.0.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: guava-11.0.2.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: unused-1.0.0.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: joda-convert-1.6.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: joda-time-2.3.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: jsr305-1.3.9.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: jackson-annotations-2.3.2.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: scopt_2.11-3.2.0.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: arpack_combined_all-0.1.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: opencsv-2.3.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: imageio-jpeg-3.2.1.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: jackson-databind-2.3.2.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: imageio-metadata-3.2.1.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: jtransforms-2.4.0.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: common-lang-3.2.1.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: common-io-3.2.1.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: common-image-3.2.1.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: javax.servlet-api-3.0.1.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: slf4j-api-1.7.5.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: spire-macros_2.11-0.7.4.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: scala-library-2.11.8.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: play-iteratees_2.11-2.3.8.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: scala-stm_2.11-0.7.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: mkl-java-mac-0.3.0.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: bigquant-java-mac-0.3.0.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: config-1.2.1.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: junit-4.11.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: hamcrest-core-1.3.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: bigquant-java-0.3.0.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: play-json_2.11-2.3.8.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: spire_2.11-0.7.4.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: scala-reflect-2.11.8.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: breeze_2.11-0.11.2.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: breeze-macros_2.11-0.11.2.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: core-1.1.2.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: mkl-java-0.3.0.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: fastutil-7.0.2.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: log4j-1.2.17.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: bigdl-SPARK_2.2-0.3.0.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mIncluding from cache: opennlp-tools-1.6.0.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0mCalculate mappings...[0m
+[0m[[0m[0minfo[0m] [0m[0mChecking every *.class/*.jar file's SHA-1.[0m
+[0m[[0m[0minfo[0m] [0m[0mMerging files...[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/DEPENDENCIES' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/MANIFEST.MF' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/com.fasterxml.jackson.core/jackson-annotations/pom.properties' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/com.fasterxml.jackson.core/jackson-annotations/pom.xml' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/com.fasterxml.jackson.core/jackson-core/pom.properties' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/com.fasterxml.jackson.core/jackson-core/pom.xml' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/com.fasterxml.jackson.core/jackson-databind/pom.properties' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/com.fasterxml.jackson.core/jackson-databind/pom.xml' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/com.github.fommil.netlib/core/pom.properties' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/com.github.fommil.netlib/core/pom.xml' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/com.github.rwl/jtransforms/pom.properties' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/com.github.rwl/jtransforms/pom.xml' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/com.google.guava/guava/pom.properties' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/com.google.guava/guava/pom.xml' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/com.intel.analytics.bigdl.bigquant/bigquant-java-mac/pom.properties' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/com.intel.analytics.bigdl.bigquant/bigquant-java-mac/pom.xml' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/com.intel.analytics.bigdl.bigquant/bigquant-java/pom.properties' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/com.intel.analytics.bigdl.bigquant/bigquant-java/pom.xml' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/com.intel.analytics.bigdl.native/mkl-java-mac/pom.properties' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/com.intel.analytics.bigdl.native/mkl-java-mac/pom.xml' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/com.intel.analytics.bigdl.native/mkl-java/pom.properties' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/com.intel.analytics.bigdl.native/mkl-java/pom.xml' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/com.intel.analytics.bigdl.spark-version/2.0-SPARK_2.2/pom.properties' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/com.intel.analytics.bigdl.spark-version/2.0-SPARK_2.2/pom.xml' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/com.intel.analytics.bigdl/bigdl-SPARK_2.2/pom.properties' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/com.intel.analytics.bigdl/bigdl-SPARK_2.2/pom.xml' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/com.twelvemonkeys.common/common-image/pom.properties' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/com.twelvemonkeys.common/common-image/pom.xml' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/com.twelvemonkeys.common/common-io/pom.properties' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/com.twelvemonkeys.common/common-io/pom.xml' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/com.twelvemonkeys.common/common-lang/pom.properties' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/com.twelvemonkeys.common/common-lang/pom.xml' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/com.twelvemonkeys.imageio/imageio-jpeg/pom.properties' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/com.twelvemonkeys.imageio/imageio-jpeg/pom.xml' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/com.twelvemonkeys.imageio/imageio-metadata/pom.properties' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/com.twelvemonkeys.imageio/imageio-metadata/pom.xml' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/javax.servlet/javax.servlet-api/pom.properties' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/javax.servlet/javax.servlet-api/pom.xml' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/joda-time/joda-time/pom.properties' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/joda-time/joda-time/pom.xml' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/log4j/log4j/pom.properties' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/log4j/log4j/pom.xml' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/net.sf.opencsv/opencsv/pom.properties' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/net.sf.opencsv/opencsv/pom.xml' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/org.apache.opennlp/opennlp-tools/pom.properties' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/org.apache.opennlp/opennlp-tools/pom.xml' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/org.joda/joda-convert/pom.properties' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/org.joda/joda-convert/pom.xml' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/org.slf4j/slf4j-api/pom.properties' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/org.slf4j/slf4j-api/pom.xml' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/org.spark-project.spark/unused/pom.properties' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'META-INF/maven/org.spark-project.spark/unused/pom.xml' with strategy 'discard'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'com/intel/analytics/bigdl/bigquant/BigQuant.class' with strategy 'first'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'com/intel/analytics/bigdl/bigquant/Loader.class' with strategy 'first'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'com/intel/analytics/bigdl/mkl/MKL.class' with strategy 'first'[0m
+[0m[[0m[33mwarn[0m] [0m[0mMerging 'org/apache/spark/unused/UnusedStubClass.class' with strategy 'last'[0m
+[0m[[0m[33mwarn[0m] [0m[0mStrategy 'discard' was applied to 52 files[0m
+[0m[[0m[33mwarn[0m] [0m[0mStrategy 'first' was applied to 3 files[0m
+[0m[[0m[33mwarn[0m] [0m[0mStrategy 'last' was applied to a file[0m
+[0m[[0m[0minfo[0m] [0m[0mAssembly up to date: /home/m/Spark-Scala/BigDL-Spark-Malicious-URL-Detection-Deep-Learning/URL-Classification/target/scala-2.11/URL-Classification-assembly-0.1.jar[0m

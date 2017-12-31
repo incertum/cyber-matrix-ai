@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: breeze
+Implementation-Version: 0.11.2
+Specification-Vendor: org.scalanlp
+Specification-Title: breeze
+Implementation-Vendor-Id: org.scalanlp
+Specification-Version: 0.11.2
+Implementation-Vendor: org.scalanlp
+

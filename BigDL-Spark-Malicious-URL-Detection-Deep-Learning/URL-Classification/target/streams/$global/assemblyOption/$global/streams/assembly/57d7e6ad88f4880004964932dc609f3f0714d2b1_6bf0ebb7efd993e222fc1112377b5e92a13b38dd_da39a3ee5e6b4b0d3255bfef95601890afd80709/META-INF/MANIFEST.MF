@@ -1,0 +1,32 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: 1.6.0_11 (Sun Microsystems Inc.)
+Built-By: java_re
+Build-Jdk: 1.6.0_11
+Extension-Name: javax.servlet
+Implementation-Vendor: GlassFish Community
+Implementation-Vendor-Id: org.glassfish
+Implementation-Version: 3.0.1
+Specification-Title: Java(TM) Servlet API Design Specification
+Specification-Vendor: Oracle
+Specification-Version: 3.0
+Export-Package: javax.servlet;uses:="javax.servlet.descriptor,javax.se
+ rvlet.annotation";version="3.0",javax.servlet.descriptor;version="3.0
+ ",javax.servlet.annotation;uses:="javax.servlet";version="3.0",javax.
+ servlet.http;uses:="javax.servlet";version="3.0"
+Tool: Bnd-0.0.255
+Bundle-Name: Java Servlet API
+Bundle-Vendor: GlassFish Community
+Bundle-Version: 3.0.1
+Bnd-LastModified: 1310501403262
+Bundle-ManifestVersion: 2
+Bundle-License: https://glassfish.dev.java.net/nonav/public/CDDL+GPL.h
+ tml
+Bundle-Description: Java.net - The Source for Java Technology Collabor
+ ation
+Import-Package: javax.servlet;version="3.0",javax.servlet.annotation;v
+ ersion="3.0",javax.servlet.descriptor;version="3.0",javax.servlet.htt
+ p;version="3.0"
+Bundle-SymbolicName: javax.servlet-api
+Bundle-DocURL: https://glassfish.dev.java.net
+

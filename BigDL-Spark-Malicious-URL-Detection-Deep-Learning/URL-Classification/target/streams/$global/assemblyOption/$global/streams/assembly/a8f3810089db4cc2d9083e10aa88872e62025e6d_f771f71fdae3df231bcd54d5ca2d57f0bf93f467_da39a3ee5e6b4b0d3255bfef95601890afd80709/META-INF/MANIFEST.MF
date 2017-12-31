@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1399042436727
+Bundle-ManifestVersion: 2
+Bundle-Name: com.typesafe.config
+Bundle-SymbolicName: com.typesafe.config
+Bundle-Version: 1.2.1
+Created-By: 1.6.0_45 (Sun Microsystems Inc.)
+Export-Package: com.typesafe.config;version="1.2.1",com.typesafe.config.
+ impl;uses:="com.typesafe.config";version="1.2.1"
+Include-Resource: /home/hp/checkout/hocon/config/src/main/resources,/hom
+ e/hp/checkout/hocon/config/target/resource_managed/main
+Private-Package: com.typesafe.config.*
+Tool: Bnd-2.1.0.20130426-122213

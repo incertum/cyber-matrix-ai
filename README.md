@@ -9,5 +9,6 @@ Welcome to "Cyber Matrix AI". This repo contains a collection of open source cyb
 Clicking any of the below links will redirect you to the respective project's README file.
 
 - [Detecting Malicious URLS using Deep Learning / Featureless URL Classification Approach](Malicious-URL-Detection-Deep-Learning/README.md) (Python Keras using tensorflow backend)
+- [Scaling Up: BigDL Deep Learning on Spark for Detecting Malicious URLS](BigDL-Spark-Malicious-URL-Detection-Deep-Learning/README.md) (Spark Scala using BigDL lib)
 
 
