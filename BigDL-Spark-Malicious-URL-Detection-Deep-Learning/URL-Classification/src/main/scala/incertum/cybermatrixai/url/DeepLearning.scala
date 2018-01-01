@@ -153,7 +153,7 @@ class DeepLearning {
     //      .setLabelCol("isMalicious")
     //      .setBatchSize(batchSizeValue)
     //      .setOptimMethod(optim)
-    //      .setMaxEpoch(batchSizeValue)
+    //      .setMaxEpoch(maxEpochValue)
     //
     //    // Fit DL model
     //    val dlModel = dlClf.fit(df2)

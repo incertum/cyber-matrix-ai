@@ -79,7 +79,7 @@ All preprocessing is done in [Driver.scala](URL-Classification/src/main/scala/in
 - Convert this HashMap to a Spark `broadcast` variable.
 - Resolve the broadcast variable to map each character of the URL to it's unique float type index starting from `3.0f`. Assign `2.0f` if character not available in Map. URLs that are longer than 75 characters will be cropped (`val sequenceLen = 75` was arbitrarily chosen by the researcher).
 - Even though the Deep Learning embedding layer `LookupTable` provides a `padding` option for sequences that are shorter than the `sequenceLen`, I would get errors when supplying tensors of unequal lengths. Therefore, a spark `udf` (user defined function) that pads all shorter sequences with the index `1.0f` was added to the data preprocessing stage. 
-- Thus vocabulary size in this project thus is `val vocabSize = 87`.
+- Thus vocabulary size in this project is `val vocabSize = 87`.
 
 
 
@@ -194,6 +194,8 @@ Sequential[1501386c]{
 
 3. **1D Convolutions and Fully Connected Layers**
 
+Using a very similar architecture that was proposed by Josh Saxe (see [blogpost](https://www.invincea.com/2017/02/look-ma-no-features-deep-learning-methods-in-intrusion-detection/) or full [paper](https://arxiv.org/pdf/1702.08568.pdf?lipi=urn%3Ali%3Apage%3Ad_flagship3_detail_base%3Bw%2BJ3QVESSsmjKlHtncWivw%3D%3D)).
+
 ```scala
 def get1DConv(inputFrameSize: Int = 32, outputFrameSize: Int = 256, kernelW: Int = 5) =
   Sequential()
@@ -280,7 +282,7 @@ val rddSamples = df1.as[(Array[Float], Float)].rdd
   }
 ```
 
-When using the **`DataFrame based API`** ensure that neither `label` or `feature` column contain any `null` values and that the `label` column is of type `Array[Float]`. Again `nullable` has to be `false` as well as `containsNull`.
+When using the **`DataFrame based API`** ensure that neither `label` or `feature` column contain any `null` values and that the `label` column is of type `Array[Float]`.
 
 ```scala
 val df2 = df
@@ -364,7 +366,7 @@ val dlClf = new DLClassifier(modelDL, criterion2, Array(sequenceLen))
   .setLabelCol("isMalicious")
   .setBatchSize(batchSizeValue)
   .setOptimMethod(optim)
-  .setMaxEpoch(batchSizeValue)
+  .setMaxEpoch(maxEpochValue)
 
 // Fit DL model
 val dlModel = dlClf.fit(df2)

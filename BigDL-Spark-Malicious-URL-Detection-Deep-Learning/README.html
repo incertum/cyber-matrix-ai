@@ -187,7 +187,7 @@ only showing top 20 rows</code></pre>
 <li>Convert this HashMap to a Spark <code>broadcast</code> variable.</li>
 <li>Resolve the broadcast variable to map each character of the URL to it’s unique float type index starting from <code>3.0f</code>. Assign <code>2.0f</code> if character not available in Map. URLs that are longer than 75 characters will be cropped (<code>val sequenceLen = 75</code> was arbitrarily chosen by the researcher).</li>
 <li>Even though the Deep Learning embedding layer <code>LookupTable</code> provides a <code>padding</code> option for sequences that are shorter than the <code>sequenceLen</code>, I would get errors when supplying tensors of unequal lengths. Therefore, a spark <code>udf</code> (user defined function) that pads all shorter sequences with the index <code>1.0f</code> was added to the data preprocessing stage.</li>
-<li>Thus vocabulary size in this project thus is <code>val vocabSize = 87</code>.</li>
+<li>Thus vocabulary size in this project is <code>val vocabSize = 87</code>.</li>
 </ul>
 <pre class="scala"><code>+--------------------+-----------+---------+--------------------+--------------------+----------------+
 |                 url|isMalicious|urlLength|           urlTokens|          urlIndices|urlIndicesLength|
@@ -282,6 +282,7 @@ Sequential[1501386c]{
 <ol start="3" style="list-style-type: decimal">
 <li><strong>1D Convolutions and Fully Connected Layers</strong></li>
 </ol>
+<p>Using a very similar architecture that was proposed by Josh Saxe (see <a href="https://www.invincea.com/2017/02/look-ma-no-features-deep-learning-methods-in-intrusion-detection/">blogpost</a> or full <a href="https://arxiv.org/pdf/1702.08568.pdf?lipi=urn%3Ali%3Apage%3Ad_flagship3_detail_base%3Bw%2BJ3QVESSsmjKlHtncWivw%3D%3D">paper</a>).</p>
 <pre class="scala"><code>def get1DConv(inputFrameSize: Int = 32, outputFrameSize: Int = 256, kernelW: Int = 5) =
   Sequential()
     .add(TemporalConvolution(inputFrameSize, outputFrameSize, kernelW, 1))
@@ -361,7 +362,7 @@ val rddSamples = df1.as[(Array[Float], Float)].rdd
       labelTensor = Tensor(Array(target), Array(classNum))
     )
   }</code></pre>
-<p>When using the <strong><code>DataFrame based API</code></strong> ensure that neither <code>label</code> or <code>feature</code> column contain any <code>null</code> values and that the <code>label</code> column is of type <code>Array[Float]</code>. Again <code>nullable</code> has to be <code>false</code> as well as <code>containsNull</code>.</p>
+<p>When using the <strong><code>DataFrame based API</code></strong> ensure that neither <code>label</code> or <code>feature</code> column contain any <code>null</code> values and that the <code>label</code> column is of type <code>Array[Float]</code>.</p>
 <pre class="scala"><code>val df2 = df
   .withColumn(&quot;isMalicious&quot;, $&quot;isMalicious&quot;.cast(&quot;float&quot;)).na.fill(value = 0.0f, cols = Seq(&quot;isMalicious&quot;))
   .select($&quot;urlIndices&quot;, array($&quot;isMalicious&quot;).alias(&quot;isMalicious&quot;))
@@ -422,7 +423,7 @@ val dlClf = new DLClassifier(modelDL, criterion2, Array(sequenceLen))
   .setLabelCol(&quot;isMalicious&quot;)
   .setBatchSize(batchSizeValue)
   .setOptimMethod(optim)
-  .setMaxEpoch(batchSizeValue)
+  .setMaxEpoch(maxEpochValue)
 
 // Fit DL model
 val dlModel = dlClf.fit(df2)
